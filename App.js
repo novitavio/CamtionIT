@@ -11,6 +11,8 @@ import Jurusan from './screens/jurusan'; // Import the Jurusan component
 import Article from './screens/article'; // Import the Article component
 import Profile from './screens/profile'; // Import the Profile component
 import Button from './components/button';
+import SearchBar from './components/searchbar';
+import ArticleDetailScreen from './screens/article-detail';
 import AppNavigator from './AppNavigator';
 
 const Stack = createStackNavigator();
@@ -80,6 +82,8 @@ const App = () => {
           />
           <Stack.Screen name="Tabs" component={Tabs} options={noHead} />
           <Stack.Screen name="Button" component={Button} />
+          <Stack.Screen name="SearchBar" component={SearchBar} />
+        <Stack.Screen name="ArticleDetail" component={ArticleDetailScreen} />
         </Stack.Navigator>
       </NavigationContainer>
     </NativeBaseProvider>
