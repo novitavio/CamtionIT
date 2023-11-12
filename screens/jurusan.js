@@ -1,10 +1,10 @@
 import React from 'react';
-import { View, Image, Text, StyleSheet, ScrollView } from 'react-native';
-import { NativeBaseProvider, Box } from 'native-base';
+import { Image, ScrollView } from 'react-native';
+import { NativeBaseProvider, Box, Text } from 'native-base';
 import Header from '../components/header';
 
 const Separator = () => (
-  <View style={styles.separator} />
+  <Box height={20} backgroundColor="white" marginBottom={10} />
 );
 
 const Jurusan = () => {
@@ -43,68 +43,44 @@ const Jurusan = () => {
 
   return (
     <NativeBaseProvider>
-      <Box flex={1} px="1">
+      <Box flex={1} px={1}>
         <Header />
         <ScrollView>
-          <View style={styles.outerContainer}>
+          <Box
+            backgroundColor="#add8e6"
+            padding={16}
+            marginLeft={-16}
+            marginRight={-16}
+          >
             {dataJurusan.map((jurusan, index) => (
-              <View key={index}>
-                <View style={styles.container}>
+              <Box key={index}>
+                <Box flexDirection="row" alignItems="center" marginBottom={16}>
                   <Image
                     source={jurusan.gambar}
-                    style={styles.image}
+                    style={{
+                      width: 100,
+                      height: 100,
+                      borderRadius: 8,
+                      marginRight: 16,
+                    }}
                   />
-                  <View style={styles.textContainer}>
-                    <Text style={styles.title}>{jurusan.nama}</Text>
-                    <Text style={styles.description}>{jurusan.deskripsi}</Text>
-                  </View>
-                </View>
+                  <Box flex={1} justifyContent="space-between">
+                    <Text fontSize={18} fontWeight="bold" marginBottom={8}>
+                      {jurusan.nama}
+                    </Text>
+                    <Text fontSize={14} color="brown">
+                      {jurusan.deskripsi}
+                    </Text>
+                  </Box>
+                </Box>
                 {index !== dataJurusan.length - 1 && <Separator />}
-              </View>
+              </Box>
             ))}
-          </View>
+          </Box>
         </ScrollView>
       </Box>
     </NativeBaseProvider>
   );
 };
-
-const styles = StyleSheet.create({
-  outerContainer: {
-    backgroundColor: '#add8e6', // Warna latar belakang biru muda
-    padding: 16,
-    marginLeft: -16,
-    marginRight: -16,
-  },
-  container: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginBottom: 16,
-  },
-  image: {
-    width: 100,
-    height: 100,
-    borderRadius: 8,
-    marginRight: 16,
-  },
-  textContainer: {
-    flex: 1,
-    justifyContent: 'space-between', // Memusatkan elemen secara vertikal
-  },
-  title: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    marginBottom: 8,
-  },
-  description: {
-    fontSize: 14,
-    color: 'brown',
-  },
-  separator: {
-    height: 20,
-    backgroundColor: 'white',
-    marginBottom: 10,
-  },
-});
 
 export default Jurusan;
