@@ -1,10 +1,12 @@
 // Login.js
 import React, { useState } from 'react';
 import { View, Text, TextInput, Button, StyleSheet, Image } from 'react-native';
+import { useNavigation } from "@react-navigation/native";
 
-const Login = ({ navigation }) => {
+const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const navigation = useNavigation();
 
   const handleLogin = () => {
     // Implement your login logic here
@@ -14,8 +16,8 @@ const Login = ({ navigation }) => {
     const isAuthenticated = true; // Change this based on your authentication logic
 
     if (isAuthenticated) {
-      // Navigate to the Home screen
-      navigation.navigate('Home');
+      // Navigate to the Tabs screen
+      navigation.navigate('Tabs');
     }
   };
 
@@ -44,6 +46,7 @@ const Login = ({ navigation }) => {
   );
 };
 
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -51,7 +54,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingHorizontal: 16,
   },
-  
+
   logo: {
     marginBottom: 20,
   },

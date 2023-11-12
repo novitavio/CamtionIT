@@ -1,70 +1,61 @@
 // Home.js
 import React from "react";
 import { View, Text, StyleSheet, Image } from "react-native";
-import Button from "./components/button";
+import { useNavigation } from "@react-navigation/native";
+import { NativeBaseProvider } from "native-base"; // Import NativeBaseProvider
+import Header from "../components/header";
+import { TouchableOpacity } from "react-native-gesture-handler";
+
 const Home = () => {
+  const navigation = useNavigation();
+
+  const navigateToJurusanDetail = (jurusanName) => {
+    navigation.navigate("JurusanDetail", { jurusanName });
+  };
+
+
   return (
-    // tampilan pertama
-    <View style={styles.container}>
-      {/* <Button navigation={navigation} /> Display the Navbar */}
-      <View style={styles.box}>
-        {/* Konten di dalam kotak */}
-        <Text style={styles.boxText}>Camtion IT</Text>
-        <Text style={styles.boxText1}>Application</Text>
-        <View style={styles.infoContainer}>
-          {/* Gambar pertama */}
-          <Text style={styles.boxText2}>Informasi Kampus Seputar IT</Text>
-          <Image
-            source={require("./assets/it.png")}
-            style={styles.gambarKecil}
-          />
-        </View>
-        <View style={styles.infoContainer2}>
-          <View style={styles.box2}></View>
-          <View style={styles.box3}></View>
-          <View style={styles.box3}></View>
-        </View>
-      </View>
+    <NativeBaseProvider>
       <View style={styles.container}>
-        <Text style={styles.title}>Jurusan IT</Text>
-        <View style={styles.newsContainer}>
-          {/* Artikel berita pertama */}
-          <View style={styles.newsItem}>
-            <Image
-              source={require("./assets/sistem-informasi.png")}
-              style={styles.newsImage}
-            />
-            <Text style={styles.newsTitle}>Sistem Informasi</Text>
+      <Header />
+        <View style={styles.box}>
+          <Text style={styles.boxText}>Camtion IT</Text>
+          <Text style={styles.boxText1}>Application</Text>
+          <View style={styles.infoContainer}>
+            <Text style={styles.boxText2}>Informasi Kampus Seputar IT</Text>
+            <Image source={require("../assets/it.png")} style={styles.gambarKecil} />
           </View>
-          {/* Artikel berita kedua */}
-          <View style={styles.newsItem}>
-            <Image
-              source={require("./assets/teknik-informatika.png")}
-              style={styles.newsImage}
-            />
-            <Text style={styles.newsTitle}>Teknik Informatika</Text>
+          <View style={styles.infoContainer2}>
+            <View style={styles.box2}></View>
+            <View style={styles.box3}></View>
+            <View style={styles.box3}></View>
           </View>
         </View>
-        <View style={styles.newsContainer}>
-          {/* Artikel berita pertama */}
-          <View style={styles.newsItem}>
-            <Image
-              source={require("./assets/rekayasa-perangkat-lunak.png")}
-              style={styles.newsImage}
-            />
-            <Text style={styles.newsTitle}>Rekayasa Perangkat Lunak</Text>
+        <View style={styles.container}>
+          <Text style={styles.title}>Jurusan IT</Text>
+          <View style={styles.newsContainer}>
+            <View style={styles.newsItem}>
+              <Image source={require("../assets/sistem-informasi.png")} style={styles.newsImage} />
+              <Text style={styles.newsTitle}>Sistem Informasi</Text>
+            </View>
+            <View style={styles.newsItem}>
+              <Image source={require("../assets/teknik-informatika.png")} style={styles.newsImage} />
+              <Text style={styles.newsTitle}>Teknik Informatika</Text>
+            </View>
           </View>
-          {/* Artikel berita kedua */}
-          <View style={styles.newsItem}>
-            <Image
-              source={require("./assets/teknologi-informasi.png")}
-              style={styles.newsImage}
-            />
-            <Text style={styles.newsTitle}>Teknologi Informasi</Text>
+          <View style={styles.newsContainer}>
+            <View style={styles.newsItem}>
+              <Image source={require("../assets/rekayasa-perangkat-lunak.png")} style={styles.newsImage} />
+              <Text style={styles.newsTitle}>Rekayasa Perangkat Lunak</Text>
+            </View>
+            <View style={styles.newsItem}>
+              <Image source={require("../assets/teknologi-informasi.png")} style={styles.newsImage} />
+              <Text style={styles.newsTitle}>Teknologi Informasi</Text>
+            </View>
           </View>
         </View>
       </View>
-    </View>
+    </NativeBaseProvider>
   );
 };
 
@@ -98,7 +89,7 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
-    justifyContent: "top",
+    justifyContent: "flex-start",
     alignItems: "center",
     flexDirection: "column",
     padding: 16,
@@ -109,7 +100,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     backgroundColor: "#005F82", // Warna latar belakang kotak
     borderRadius: 20, // Sudut melengkung pada kotak
-    marginTop: 20, // Jarak ke bawah
+    marginTop: 0, // Jarak ke bawah
   },
   box2: {
     width: 30,
