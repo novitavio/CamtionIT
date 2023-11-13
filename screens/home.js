@@ -1,4 +1,3 @@
-// Home.js
 import React from "react";
 import { View, Text, StyleSheet, Image } from "react-native";
 import { useNavigation } from "@react-navigation/native";
@@ -13,17 +12,22 @@ const Home = () => {
     navigation.navigate("JurusanDetail", { jurusanName });
   };
 
-
+  const navigateToJurusan = () => {
+    navigation.navigate("Jurusan");
+  }
   return (
     <NativeBaseProvider>
       <View style={styles.container}>
-      <Header />
+        <Header />
         <View style={styles.box}>
           <Text style={styles.boxText}>Camtion IT</Text>
           <Text style={styles.boxText1}>Application</Text>
           <View style={styles.infoContainer}>
             <Text style={styles.boxText2}>Informasi Kampus Seputar IT</Text>
-            <Image source={require("../assets/it.png")} style={styles.gambarKecil} />
+            <Image
+              source={require("../assets/it.png")}
+              style={styles.gambarKecil}
+            />
           </View>
           <View style={styles.infoContainer2}>
             <View style={styles.box2}></View>
@@ -35,22 +39,43 @@ const Home = () => {
           <Text style={styles.title}>Jurusan IT</Text>
           <View style={styles.newsContainer}>
             <View style={styles.newsItem}>
-              <Image source={require("../assets/sistem-informasi.png")} style={styles.newsImage} />
+            <TouchableOpacity onPress={navigateToJurusan}>
+              <Image
+                source={require("../assets/sistem-informasi.png")}
+                style={styles.newsImage}
+              />
               <Text style={styles.newsTitle}>Sistem Informasi</Text>
+            </TouchableOpacity>
             </View>
             <View style={styles.newsItem}>
-              <Image source={require("../assets/teknik-informatika.png")} style={styles.newsImage} />
+              <TouchableOpacity onPress={navigateToJurusan}>
+              <Image
+                source={require("../assets/teknik-informatika.png")}
+                style={styles.newsImage}
+              />
               <Text style={styles.newsTitle}>Teknik Informatika</Text>
+            </TouchableOpacity>
             </View>
           </View>
           <View style={styles.newsContainer}>
             <View style={styles.newsItem}>
-              <Image source={require("../assets/rekayasa-perangkat-lunak.png")} style={styles.newsImage} />
+            <TouchableOpacity onPress={navigateToJurusan}>
+            <Image
+                source={require("../assets/rekayasa-perangkat-lunak.png")}
+                style={styles.newsImage}
+              />
               <Text style={styles.newsTitle}>Rekayasa Perangkat Lunak</Text>
+            </TouchableOpacity>
             </View>
             <View style={styles.newsItem}>
-              <Image source={require("../assets/teknologi-informasi.png")} style={styles.newsImage} />
+            <TouchableOpacity onPress={navigateToJurusan}>
+            <Image
+                source={require("../assets/teknologi-informasi.png")}
+                style={styles.newsImage}
+              />
               <Text style={styles.newsTitle}>Teknologi Informasi</Text>
+            </TouchableOpacity>
+              
             </View>
           </View>
         </View>
