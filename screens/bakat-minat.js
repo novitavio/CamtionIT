@@ -19,7 +19,6 @@ const BakatMinat = () => {
     const navigation = useNavigation();
     return (
         <NativeBaseProvider>
-            <Header title={"Tes Bakat Minat"} withBack="true" />
             <HStack>
                 <Image mt={2} size={120} source={require("../assets/it.png")}></Image>
                 <VStack>

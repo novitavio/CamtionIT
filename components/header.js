@@ -6,27 +6,20 @@ import { useNavigation } from "@react-navigation/native";
 
 const Header = () => {
   const navigation = useNavigation();
-  const titleColor = 'white'; // Set title color to white
+  const titleColor = 'white'; 
 
   return (
     <HStack
     bg="#005F82"
-    px="4" // Reduced px value for left and right padding
+    px="4" 
     py="5"
     justifyContent="space-between"
     alignItems="stretch"
     space="0"
     bottom={2}
-    width="100%" // Set width to 100% for full width
+    width="100%"
   >
       <HStack alignItems="center">
-        <Icon
-          as={MaterialIcons}
-          name="menu"
-          size="md"
-          color="white"
-          onPress={() => navigation.toggleDrawer()}
-        />
         <Text color={titleColor} fontSize="20" fontWeight="bold" ml="2">
           CamtionIT
         </Text>
