@@ -4,7 +4,7 @@ import { NativeBaseProvider, Box, Text } from 'native-base';
 import Header from '../components/header';
 
 const Separator = () => (
-  <Box height={20} backgroundColor="white" marginBottom={10} />
+  <Box height={10} backgroundColor="white" marginBottom={5} />
 );
 
 const Jurusan = () => {
@@ -25,7 +25,7 @@ const Jurusan = () => {
       gambar: require('../assets/teknik-informatika.png'),
     },
     {
-      nama: 'Rekayasa Perangkat Lunak',
+      nama: 'Rekaya Perangkat Lunak',
       deskripsi: 'Rekayasa Perangkat Lunak berkaitan dengan pengembangan perangkat lunak dengan pendekatan sistematis dan terukur. Mahasiswa memahami siklus hidup pengembangan perangkat lunak, dari analisis kebutuhan hingga pemeliharaan.',
       gambar: require('../assets/rekayasa-perangkat-lunak.png'),
     },
@@ -48,13 +48,13 @@ const Jurusan = () => {
         <ScrollView>
           <Box
             backgroundColor="#add8e6"
-            padding={16}
-            marginLeft={-16}
-            marginRight={-16}
+            padding={1}
+            marginLeft={-2}
+            marginRight={-2}
           >
             {dataJurusan.map((jurusan, index) => (
               <Box key={index}>
-                <Box flexDirection="row" alignItems="center" marginBottom={16}>
+                <Box flexDirection="row" alignItems="center" marginBottom={5}>
                   <Image
                     source={jurusan.gambar}
                     style={{
@@ -65,7 +65,7 @@ const Jurusan = () => {
                     }}
                   />
                   <Box flex={1} justifyContent="space-between">
-                    <Text fontSize={18} fontWeight="bold" marginBottom={8}>
+                    <Text fontSize={18} fontWeight="bold" marginBottom={6}>
                       {jurusan.nama}
                     </Text>
                     <Text fontSize={14} color="brown">

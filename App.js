@@ -9,10 +9,12 @@ import Login from './login';
 import Home from './screens/home';
 import Jurusan from './screens/jurusan'; // Import the Jurusan component
 import Article from './screens/article'; // Import the Article component
-import Profile from './screens/profile'; // Import the Profile component
+import Account from './screens/account'; // Import the Profile component
 import Button from './components/button';
 import SearchBar from './components/searchbar';
 import ArticleDetailScreen from './screens/article-detail';
+import BakatMinat from './screens/bakat-minat';
+import EditProfile from './screens/edit-profile';
 import AppNavigator from './AppNavigator';
 
 const Stack = createStackNavigator();
@@ -36,7 +38,7 @@ const Tabs = () => {
             case "Article":
               iconName = "newspaper-outline";
               break;
-            case "Profile":
+            case "Account":
               iconName = "person-outline";
               break;
           }
@@ -65,7 +67,7 @@ const Tabs = () => {
       <Tab.Screen name="Home" component={Home} options={noHead} />
       <Tab.Screen name="Jurusan" component={Jurusan} options={noHead} />
       <Tab.Screen name="Article" component={Article} options={noHead} />
-      <Tab.Screen name="Profile" component={Profile} options={noHead} />
+      <Tab.Screen name="Account" component={Account} options={noHead} />
     </Tab.Navigator>
   );
 };
@@ -84,6 +86,8 @@ const App = () => {
           <Stack.Screen name="Button" component={Button} />
           <Stack.Screen name="SearchBar" component={SearchBar} />
         <Stack.Screen name="ArticleDetail" component={ArticleDetailScreen} />
+        <Stack.Screen name="BakatMinat" component={BakatMinat} />
+        <Stack.Screen name="EditProfile" component={EditProfile} />
         </Stack.Navigator>
       </NavigationContainer>
     </NativeBaseProvider>
