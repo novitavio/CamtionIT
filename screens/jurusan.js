@@ -59,7 +59,7 @@ const Jurusan = () => {
                     source={jurusan.gambar}
                     style={{
                       width: 100,
-                      height: 100,
+                      height: 100, 
                       borderRadius: 8,
                       marginRight: 16,
                     }}

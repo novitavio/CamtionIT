@@ -9,7 +9,16 @@ const Header = () => {
   const titleColor = 'white'; // Set title color to white
 
   return (
-    <HStack bg="#005F82" px="0" py="15" justifyContent="space-between" alignItems="stretch" space="0">
+    <HStack
+    bg="#005F82"
+    px="4" // Reduced px value for left and right padding
+    py="5"
+    justifyContent="space-between"
+    alignItems="stretch"
+    space="0"
+    bottom={2}
+    width="100%" // Set width to 100% for full width
+  >
       <HStack alignItems="center">
         <Icon
           as={MaterialIcons}
